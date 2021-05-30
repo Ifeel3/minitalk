@@ -14,6 +14,7 @@ void	ft_printchar(siginfo_t **siginfo, char *chr)
 	{
 		write(1, "\n", 1);
 		kill((*siginfo)->si_pid, SIGUSR2);
+		return ;
 	}
 	write(1, &numb, 1);
 }
