@@ -1,24 +1,18 @@
 NAME	= minitalk
-
 APPS	= server
-
+SRCS	= $(wildcard serverdir/*.c)
+OBJS	= $(SRCS:%.c=%.o)
 APPC	= client
-
 CC		= gcc
-
 CFLAGS	= -Wall -Werror -Wextra
+SRCC	= $(wildcard clientdir/*.c)
+OBJC	= $(SRCC:%.c=%.o)
 
-SRCS	= $(wildcard serverdir/*.c) \
-		ft_parsepid.c
-
-SRCC	= $(wildcard clientdir/*.c) \
-		ft_parsepid.c
-
-OBJS = $(SRCS:%.c=%.o)
-
-OBJC = $(SRCC:%.c=%.o)
+.PHONY: all clean fclean re $(NAME) $(APP1) $(APP2) norm
 
 all: $(NAME)
+
+$(NAME): $(APPS) $(APPC)
 
 $(APPS): $(OBJS)
 ifndef ($?)
@@ -29,8 +23,6 @@ $(APPC): $(OBJC)
 ifndef ($?)
 		$(CC) $(OBJC) -o $@
 endif
-
-$(NAME): $(APPS) $(APPC)
 
 clean:
 	rm -f $(OBJS) $(OBJC)
@@ -44,5 +36,3 @@ norm:
 	norminette -R CheckForbiddenSourceHeader $(SRCS)
 	norminette -R CheckForbiddenSourceHeader $(SRCC)
 	norminette minitalk.h
-
-.PHONY: all clean fclean re $(NAME) $(APP1) $(APP2) norm
