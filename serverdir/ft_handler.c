@@ -16,7 +16,7 @@ void	ft_handler(int sig, siginfo_t *siginfo, void *unused)
 	if (sig == SIGUSR2)
 		*chr = '1';
 	chr++;
-	if (!*chr)
+	if (*chr == 0)
 	{
 		chr -= 8;
 		ft_printchar(&siginfo, chr);
