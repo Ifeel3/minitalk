@@ -2,7 +2,7 @@
 
 void	ft_printchar(siginfo_t **siginfo, char *chr)
 {
-	int numb;
+	int	numb;
 
 	numb = 0;
 	while (*chr)
