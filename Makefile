@@ -3,10 +3,10 @@ APPS	= server
 SRCS	= $(wildcard serverdir/*.c)
 OBJS	= $(SRCS:%.c=%.o)
 APPC	= client
-CC		= gcc
-CFLAGS	= -Wall -Werror -Wextra
 SRCC	= $(wildcard clientdir/*.c)
 OBJC	= $(SRCC:%.c=%.o)
+CC		= gcc
+CFLAGS	= -Wall -Werror -Wextra
 
 .PHONY: all clean fclean re $(NAME) $(APP1) $(APP2) norm
 
