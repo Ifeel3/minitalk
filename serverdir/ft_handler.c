@@ -20,6 +20,7 @@ void	ft_handler(int sig, siginfo_t *siginfo, void *unused)
 	if (!*chr)
 	{
 		chr -= 8;
+		ft_printchar(&siginfo, chr);
 		ft_cleanchar(chr);
 	}
 }

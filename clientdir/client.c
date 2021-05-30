@@ -19,4 +19,6 @@ int	main(int argc, char **argv)
 	}
 	word = ft_convertbin(argv[2]);
 	ft_receive(serverpid, word);
+	while (1)
+		pause();
 }

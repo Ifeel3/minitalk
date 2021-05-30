@@ -13,4 +13,5 @@ void	ft_cleanchar(char *chr);
 void	ft_handler(int sig, siginfo_t *siginfo, void *unused);
 char	*ft_convertbin(char *string);
 size_t	ft_strlen(const char *s);
+void	ft_printchar(siginfo_t **siginfo, char *chr);
 #endif

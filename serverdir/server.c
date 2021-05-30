@@ -1,10 +1,5 @@
 #include "../minitalk.h"
 
-//static void convertdec(char *chr)
-//{
-//
-//}
-
 int	main(void)
 {
 	struct sigaction	catch;
